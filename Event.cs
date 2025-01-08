@@ -37,7 +37,7 @@ namespace JanuaryExam
         // METHODS
         public int CompareTo(Event other)
         {
-            return this.EventDate.Day.CompareTo(other.EventDate.Day);
+            return EventDate.Day.CompareTo(other.EventDate.Day);
         }
         public override string ToString()
         {

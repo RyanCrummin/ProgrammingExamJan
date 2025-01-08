@@ -21,8 +21,8 @@ namespace JanuaryExam
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Event> events;
-        public List<Ticket> tickets;
+        private List<Event> events;
+        private List<Ticket> tickets;
 
         public MainWindow()
         {
@@ -34,7 +34,9 @@ namespace JanuaryExam
             events = GetDataEvents();
             tickets = GetDataTickets();
 
-            UpdateDisplay(events);
+            listboxEvents.ItemsSource = events;
+            listboxTickets.ItemsSource = tickets;
+
 
         }
         // RETURNS THE EVENTS LIST
@@ -55,7 +57,7 @@ namespace JanuaryExam
 
             return new List<Ticket> { ticket1, ticket2, ticket3, ticket4 };
         }
-        private void UpdateDisplay(List<Event> events)
+        private void UpdateDisplayEvents(List<Event> events)
         {
             //reset the listboxes
             listboxEvents.ItemsSource = null;
@@ -63,10 +65,15 @@ namespace JanuaryExam
             events.Sort();
 
             listboxEvents.ItemsSource = events;
-            
+         
+        }
+        private void UpdateDisplayTickets(List<Ticket> tickets)
+        {
+            if(listboxEvents.SelectedItem != null)
+            {
+                listboxTickets.ItemsSource = tickets;
 
-            
-           
+            }
         }
         private void listboxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e) // EVENT LISTBOX
         {
@@ -96,9 +103,14 @@ namespace JanuaryExam
         private void textboxSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             textboxSearch.Text = " ";
+        } // SEARCH BAR GETS CLEARED WHEN CLICKING
+
+        private void txtboxTicketAmount_GotFocus(object sender, RoutedEventArgs e) // CLEARS THE TICKET AMOUNT TEXT BOX WHEN CLICKING
+        {
+            txtboxTicketAmount.Text = " ";
         }
 
-        private void txtboxTicketAmount_GotFocus(object sender, RoutedEventArgs e)
+        private void buttonBook_Click(object sender, RoutedEventArgs e) // TO CLEAR THE BOOKING TICKET BOX
         {
             txtboxTicketAmount.Text = " ";
         }

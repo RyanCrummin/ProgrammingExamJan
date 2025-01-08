@@ -57,7 +57,7 @@ namespace JanuaryExam
 
         public override string ToString()
         {
-            return $"{Name} - {Price + AdditionalCost:C} ({AdditionalExtras}) [AVAILABLE - {AvailableTickets}";
+            return $"{Name} - {Price + AdditionalCost:C} ({AdditionalExtras}) [AVAILABLE - {AvailableTickets}]";
         }
     }
 }
