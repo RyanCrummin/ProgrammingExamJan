@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800" GotFocus="Window_GotFocus">
     <Grid>
         <TextBlock x:Name="tblkEvents" HorizontalAlignment="Left" Margin="125,64,0,0" TextWrapping="Wrap" Text="Events" VerticalAlignment="Top"/>
-        <ListBox x:Name="listboxEvents" HorizontalAlignment="Left" Height="244" Margin="94,100,0,0" VerticalAlignment="Top" Width="271" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <ListBox x:Name="listboxTickets" HorizontalAlignment="Left" Height="244" Margin="419,100,0,0" VerticalAlignment="Top" Width="337" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox x:Name="listboxEvents" HorizontalAlignment="Left" Height="244" Margin="94,100,0,0" VerticalAlignment="Top" Width="271" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="listboxEvents_SelectionChanged"/>
+        <ListBox x:Name="listboxTickets" HorizontalAlignment="Left" Height="244" Margin="419,100,0,0" VerticalAlignment="Top" Width="337" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="listboxTickets_SelectionChanged"/>
         <TextBox x:Name="textboxSearch" HorizontalAlignment="Left" Margin="271,62,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="110" TextChanged="TextBox_TextChanged"/>
         <TextBlock x:Name="txtblkTickets" HorizontalAlignment="Left" Margin="474,67,0,0" TextWrapping="Wrap" Text="Tickets" VerticalAlignment="Top"/>
         <TextBlock x:Name="txtblkNumberOfTickets" HorizontalAlignment="Left" Margin="458,393,0,0" TextWrapping="Wrap" Text="Number Of Tickets" VerticalAlignment="Top"/>

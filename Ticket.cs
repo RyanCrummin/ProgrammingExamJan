@@ -14,6 +14,18 @@ namespace JanuaryExam
        public decimal Price { get; set; }  // THE PRICE OF THE TICKETS
        public int AvailableTickets { get; set; }  // THE AMOUNT OF AVAILABLE TICKETS
 
+       public Ticket()
+        {
+
+        }
+
+        public Ticket(string name, decimal price, int availableTickets)
+        {
+            Name = name;
+            Price = price;
+            AvailableTickets = availableTickets;
+
+        }
 
     }
     public class VIPTicket : Ticket
@@ -21,6 +33,18 @@ namespace JanuaryExam
         public string AdditionalExtras { get; set; } // EXTRAS ON THE TICKET
         public decimal AdditionalCost { get; set; } // ADDITIONAL COST ON THE TICKET
 
+        public VIPTicket() { }
 
+        public VIPTicket(string name, decimal price, decimal additionalCost, string additionalExtras, int availableTickets)
+        {
+            Name = name;
+            Price = price;
+            AdditionalCost = additionalCost;
+            AdditionalExtras = additionalExtras;
+            AvailableTickets = availableTickets;
+
+
+
+        }
     }
 }
