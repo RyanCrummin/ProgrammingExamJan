@@ -6,16 +6,23 @@ using System.Threading.Tasks;
 
 namespace JanuaryExam
 {
-    public class Event
+    public enum EventType
     {
-        string Name {  get; set; }
-        DateTime EventDate {  get; set; }
-        List<Ticket> Tickets { get; set; }
-        enum EventType
-        {
-            Music,
-            Comedy,
-            Theatre
-        }
+        Music,
+        Comedy,
+        Theatre
     }
-}
+    public class Event : IComparable<Event>
+    {
+       public string Name {  get; set; }
+       public DateTime EventDate {  get; set; }
+       public List<Ticket> Tickets { get; set; }
+       public EventType TypeOfEvent { get; set; }
+
+
+        public Event()
+        {
+
+        }
+
+    }

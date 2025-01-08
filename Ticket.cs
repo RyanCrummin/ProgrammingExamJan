@@ -10,16 +10,16 @@ namespace JanuaryExam
     {
 
         // DECLARING THE PROPERTIES
-        string Name { get; set; } // NAME OF THE PERSON ON THE TICKETS
-        decimal Price { get; set; }  // THE PRICE OF THE TICKETS
-        int AvailableTickets { get; set; }  // THE AMOUNT OF AVAILABLE TICKETS
+       public string Name { get; set; } // NAME OF THE PERSON ON THE TICKETS
+       public decimal Price { get; set; }  // THE PRICE OF THE TICKETS
+       public int AvailableTickets { get; set; }  // THE AMOUNT OF AVAILABLE TICKETS
 
 
     }
     public class VIPTicket : Ticket
     {
-        string AdditionalExtras { get; set; } // EXTRAS ON THE TICKET
-        decimal AdditionalCost { get; set; } // ADDITIONAL COST ON THE TICKET
+        public string AdditionalExtras { get; set; } // EXTRAS ON THE TICKET
+        public decimal AdditionalCost { get; set; } // ADDITIONAL COST ON THE TICKET
 
 
     }
