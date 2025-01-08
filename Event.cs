@@ -13,7 +13,7 @@ namespace JanuaryExam
         Comedy,
         Theatre
     }
-    public class Event //: IComparable <Event>
+    public class Event : IComparable <Event>
     {
         public string Name { get; set; } // NAME
         public DateTime EventDate { get; set; } // EVENT DATE
@@ -21,7 +21,7 @@ namespace JanuaryExam
         public EventType TypeOfEvent { get; set; } // SETS EVENT
 
 
-
+        // CONSTRUCTORS
         public Event()
         {
 
@@ -32,6 +32,12 @@ namespace JanuaryExam
             Name = name;
             EventDate = eventDate;
             TypeOfEvent = typeOfEvent;
+        }
+
+        // METHODS
+        public int CompareTo(Event other)
+        {
+            return this.EventDate.Day.CompareTo(other.EventDate.Day);
         }
     }
 }
