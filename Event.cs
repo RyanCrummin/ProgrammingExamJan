@@ -39,5 +39,9 @@ namespace JanuaryExam
         {
             return this.EventDate.Day.CompareTo(other.EventDate.Day);
         }
+        public override string ToString()
+        {
+            return $"{Name} - {EventDate:D2}";
+        }
     }
 }

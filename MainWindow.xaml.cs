@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace JanuaryExam
 {
@@ -32,6 +33,9 @@ namespace JanuaryExam
         {
             events = GetDataEvents();
             tickets = GetDataTickets();
+            UpdateDisplay(events);
+     
+            
 
         }
         // RETURNS THE EVENTS LIST
@@ -52,14 +56,27 @@ namespace JanuaryExam
 
             return new List<Ticket> { ticket1, ticket2, ticket3, ticket4 };
         }
+        private void UpdateDisplay(List<Event> items)
+        {
+            //reset the listboxes
+            listboxEvents.ItemsSource = null;
+
+            items.Sort(); // USING ICOMPARABLE
+
+            listboxEvents.ItemsSource = items;
+
+            textboxSearch.Clear();
+
+           
+        }
         private void listboxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e) // EVENT LISTBOX
         {
-         
+            listboxTickets.SelectedItem = null;
         }
 
         private void listboxTickets_SelectionChanged(object sender, SelectionChangedEventArgs e) // TICKETS LISTBOX
         {
-          
+            listboxEvents.SelectedItem = null;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -75,6 +92,11 @@ namespace JanuaryExam
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void textboxSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            textboxSearch.Text = " ";
         }
     }
 }
