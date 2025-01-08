@@ -21,8 +21,8 @@ namespace JanuaryExam
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Event> events;
-        private List<Ticket> tickets;
+        public List<Event> events;
+        public List<Ticket> tickets;
 
         public MainWindow()
         {
@@ -33,9 +33,8 @@ namespace JanuaryExam
         {
             events = GetDataEvents();
             tickets = GetDataTickets();
+
             UpdateDisplay(events);
-     
-            
 
         }
         // RETURNS THE EVENTS LIST
@@ -56,17 +55,17 @@ namespace JanuaryExam
 
             return new List<Ticket> { ticket1, ticket2, ticket3, ticket4 };
         }
-        private void UpdateDisplay(List<Event> items)
+        private void UpdateDisplay(List<Event> events)
         {
             //reset the listboxes
             listboxEvents.ItemsSource = null;
 
-            items.Sort(); // USING ICOMPARABLE
+            events.Sort();
 
-            listboxEvents.ItemsSource = items;
+            listboxEvents.ItemsSource = events;
+            
 
-            textboxSearch.Clear();
-
+            
            
         }
         private void listboxEvents_SelectionChanged(object sender, SelectionChangedEventArgs e) // EVENT LISTBOX
@@ -97,6 +96,11 @@ namespace JanuaryExam
         private void textboxSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             textboxSearch.Text = " ";
+        }
+
+        private void txtboxTicketAmount_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtboxTicketAmount.Text = " ";
         }
     }
 }
